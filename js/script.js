@@ -26,3 +26,5 @@ const generatedNumbers = [];
         }    
     }
 
+document.showNumbers.innerHTML = '<span> ${generatedNumbers} </span>'
+
