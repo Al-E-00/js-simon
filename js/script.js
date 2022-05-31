@@ -30,15 +30,15 @@ const correctNumbers = [];
     }
 
     // funciton -> after 30 sec hide the numbers
-    setTimeout (hideNumbers, 1000);
+    setTimeout (hideNumbers, 30000);
 
         function hideNumbers () {
             showNumbers.remove(` ${generatedNumbers} -`);
         }
     
     
-    //function -> afret 32 sec ask to the user to enter the numbers
-    setTimeout (userNumbers, 2000);
+    //function -> afret 31 sec ask to the user to enter the numbers
+    setTimeout (userNumbers, 31000);
 
     function userNumbers () {
         
@@ -53,21 +53,40 @@ const correctNumbers = [];
     //function -> compare the two values and push only the correct ones
     // set timeout for this function that starts when the previous ones have finished
 
-    setTimeout (checkAnswer, 3000);
+    setTimeout (checkAnswer, 32000);
 
-    function checkAnswer () {
-        for (let i = 0; i < userNumbersEntered.length; i++) {
-            let correctNumber = 0;
+    function checkAnswer() {
+
+        for (let i = 0; i < generatedNumbers.length; i++) {
+            // first loop to check the numbers
             if (generatedNumbers.includes(userNumbersEntered[i])) {
-                correctNumber = userNumbersEntered[i];
-            } else {
-                i++
-            }
-            console.log(correctNumber);
+            //if the number already exist, do not push anything
+        if(correctNumbers.includes(userNumbersEntered[i])) {
+            i++
+        }  
+        // if it doesn't exist into the array, push it
+        else {
+            correctNumbers.push(userNumbersEntered[i]);       
         }
+    } 
+}
+    }
 
+    // Bring up an alert with the right number of answers and numbers
+    
+    
+    setTimeout (alertCorrectAnswer, 33000);
 
+    
+    function alertCorrectAnswer () {
+        let numberRightAnswer = correctNumbers.length;
+        if (numberRightAnswer <= 1) {
+            alert(`You guessed  ${numberRightAnswer} number. It's: ${correctNumbers}`);
 
+        } else {
+            alert(`You guessed  ${numberRightAnswer} numbers. They are: ${correctNumbers}`);
+
+        }
     }
 
 
