@@ -56,13 +56,18 @@ const correctNumbers = [];
     setTimeout (checkAnswer, 3000);
 
     function checkAnswer () {
-        for (let i = 0; i < 5; i++){
-            if (userNumbersEntered[i] === generatedNumbers[i]) {
-                correctNumbers.push(userNumbersEntered[i]);
-        } else {
-            i++
+        for (let i = 0; i < userNumbersEntered.length; i++) {
+            let correctNumber = 0;
+            if (generatedNumbers.includes(userNumbersEntered[i])) {
+                correctNumber = userNumbersEntered[i];
+            } else {
+                i++
+            }
+            console.log(correctNumber);
         }
-    }
+
+
+
     }
 
 
