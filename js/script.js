@@ -23,8 +23,9 @@ const correctNumbers = [];
         if(generatedNumbers.includes(newNumberGenerator)) {
             i--;
         } else {
-            generatedNumbers.push(newNumberGenerator)
-            showNumbers.append(` ${generatedNumbers[i]} -`);
+            generatedNumbers.push(newNumberGenerator);
+            showNumbers.append(` ${generatedNumbers[i]}` + (i < 4 ? ' -' : ''));
+            
         }   
         
     }
@@ -44,7 +45,7 @@ const correctNumbers = [];
         
         // let enter the prompt 5 times
         for (let i = 0; i < 5; i++) {
-            let userNumbersPrompt = parseInt(prompt("Enter the numbers, one at time,  you have seen previously"));
+            let userNumbersPrompt = parseInt(prompt("Enter the numbers, one by one,  you have seen previously"));
             
             userNumbersEntered.push(userNumbersPrompt);
         }
