@@ -30,16 +30,24 @@ const correctNumbers = [];
         
     }
 
-    // funciton -> after 30 sec hide the numbers
+    // function -> after 30 sec hide the numbers
     setTimeout (hideNumbers, 30000);
 
         function hideNumbers () {
             showNumbers.remove(` ${generatedNumbers} -`);
+
+                //function -> afret ask to the user to enter the numbers
+            setTimeout(userNumbers, 0);
+
+                //function -> compare the two values and push only the correct ones
+                // add queue this function that starts when the previous ones have finished
+
+            setTimeout(checkAnswer, 0);
         }
     
     
-    //function -> afret 31 sec ask to the user to enter the numbers
-    setTimeout (userNumbers, 31000);
+
+
 
     function userNumbers () {
         
@@ -51,10 +59,6 @@ const correctNumbers = [];
         }
     }
 
-    //function -> compare the two values and push only the correct ones
-    // set timeout for this function that starts when the previous ones have finished
-
-    setTimeout (checkAnswer, 32000);
 
     function checkAnswer() {
 
